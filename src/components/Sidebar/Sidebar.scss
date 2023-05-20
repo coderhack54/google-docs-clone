@@ -1,0 +1,46 @@
+.sidebar{
+    width: 56px;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    height: 100vh ;
+
+    .sidebar__icons{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+
+        div{
+            height: 56px;
+            width: 56px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            a{
+                cursor: pointer;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                display: flex;
+                background-color: transparent;
+                justify-content: center;
+                transition: background-color 0.3s;
+                align-items: center;
+                &:hover{
+                    background-color: rgba(113, 113, 113, 0.1);
+                }
+                img{
+                    height: 60%;
+                    width: 60%;
+                    border-radius: 50%;
+                }
+            }
+
+
+
+        }
+    }
+}

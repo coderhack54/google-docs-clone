@@ -1,0 +1,197 @@
+$bg-hover:rgba(0,0,0,.06);
+
+// rgba(68,71,70,0.78)
+
+.header{
+
+    display: flex;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: #f9fbfd;
+
+    .header__logo{
+        height: 64px;
+        width: 64px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a{
+            box-sizing: border-box;
+            height: 36px;
+            width: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    .header__wrapper{
+        width: 100%;
+            .header__topbar{
+                height: 30px;
+                width: 100%;
+                padding-top: 8px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+        
+                #wrapper{
+                    display: flex;
+                    .header__topbar__docname{
+                        input{ 
+                            border-radius: 4px!important;
+                            border: 1px solid transparent;
+                            padding: 1px 6px;
+                            font-size: 18px;
+                            line-height: 22px;
+                            outline: none;
+                            &:hover{
+                                border-color: #747775;
+                            }
+                           &:focus{
+                            outline: 2px solid #0a4878;
+                            border-color: transparent;
+                           } 
+                        }
+                    }
+
+                    .header__topbar__icons{
+                        display: flex;
+                        span{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            height: 28px;
+                            width: 28px;
+                            border-radius: 50%;
+                            padding: 4px;
+                            box-sizing: border-box;
+                            cursor: pointer;
+                        }
+                    }
+                }
+        
+                .header__topbar__buttons{
+                    display: flex;
+                    height: 60px !important;
+                    align-items: center;
+        
+                    div{
+                        padding: 6px;
+                    }
+        
+                    .header__topbar__buttons__icon{
+                        span{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 50%;
+                            padding: 2px;
+                            height: 40px;
+                            width: 40px;
+                            cursor: pointer;
+                            &:hover{
+                                background-color: $bg-hover;
+                            }
+                        }
+                    }
+        
+                    .header__topbar__buttons__button{
+                        display: flex;
+                        align-items: center;
+                        background-color: transparent;
+                        outline:none;
+                        border: 0.8px transparent;
+                        cursor: pointer;
+        
+                 
+                    }
+        
+                    .videobtn{
+                        height: 40px;
+                        width: 68px;
+                        border-radius: 33px;
+                        justify-content: center;
+                        .video-chat-icon{
+                            height: 24px;
+                            width: 24px;
+                        }
+                        &:hover{
+                            background-color: #e8ebee;
+                        }
+                    }
+        
+                    .sharebtn{
+                        border-radius: 100px;
+                        box-sizing: border-box;
+                    
+                        font-size: 14px;
+                        font-weight: 500;
+                        height: 40px;
+                        line-height: 20px;
+                        padding: 9px 24px;
+                        white-space: nowrap;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        background: #c2e7ff;
+                        color: #001d35;
+        
+                        &:hover{
+                            background: #abcfe7;
+                        }
+                    }
+        
+                    .header__topbar__buttons__logo{
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+        
+                        img{
+                            height: 80%;
+                            width: 80%;
+                            border-radius: 50%;
+                        }
+                        &:hover{
+                            // background-color: $bg-hover;
+                            background-color: #e8ebee;
+                        }
+                    }
+                }
+            }
+
+
+            .header__bottombar{
+                display: flex;
+                width: 100%;
+                margin-top: -6px;
+
+                .header__bottombar__buttons{
+                    display: flex;
+                    align-items: center;
+
+                    .header__bottombar__buttons__button{
+                        padding: 2px 7px;
+                        cursor: pointer;
+                        font-size: 14px
+                    }
+                }
+            }
+    }
+}
+
+
+.focus__menubutton{
+    background-color: #e8ebee;
+}

@@ -1,0 +1,78 @@
+// rgba(68,71,70,0.78)
+
+// rgba(68,71,70,0.122)
+
+//#444746
+
+.texteditor{
+    min-height: 90vh;
+    background-color: #f9fbfd;
+    display: flex;
+    justify-content: center;
+
+    .rdw-editor-wrapper{
+     
+    }
+    .rdw-editor-toolbar{
+        display: flex;
+        justify-content: center !important;
+        position: sticky;
+        top: 64px;
+        z-index: 10;
+        background-color: #edf2fa;
+        width: 95vw;
+        border-radius: 22px;
+
+        .rdw-option-wrapper{
+            background-color: transparent;
+
+            &:hover{
+                // background-color: rgba(68,71,70,.122);
+                background-color: rgba(113, 113, 113, 0.1);
+       
+                color: #444746;
+                box-shadow: none;
+            }
+        }
+        .rdw-dropdown-wrapper{
+            &:hover{
+                box-shadow: none;
+                background-color: rgba(113, 113, 113, 0.1);
+            }
+            &:focus{
+                 background-color: rgba(68,71,70,.122);
+            }
+        }
+    }
+
+    .rdw-editor-main{
+        background-color: white;
+        max-width: 60vw;
+        margin-top: 1.5em !important;
+        margin-bottom: 0.5em !important;
+        margin:0 auto;
+        width: 826px !important;
+        height: 1066px !important;
+        border: 1px solid lightgray;
+        padding: 2em 4em;
+    }
+}
+
+
+.rdw-editor-wrapper ::-webkit-scrollbar {
+    width: 0; 
+    background-color: #f5f5f5; 
+  }
+  
+  .rdw-editor-wrapper ::-webkit-scrollbar-thumb {
+    background-color: #f5f5f5; 
+  }
+
+
+  #divider{
+    height:1px;
+    background-color: lightgray;
+    width: 40%;
+    margin: 1em 0;
+
+  }
