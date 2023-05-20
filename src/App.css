@@ -1,34 +1,9 @@
-/* colors */
-/* rgb(249,251,253) */
-/* rgb(192,224,255) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap');
 
-@font-face {
-    font-family: Google Sans;
-    src: url("./assets/fonts/ProductSans-Medium.ttf");
-    font-weight: 500;
-    font-style:normal;
+.app{
+  font-family: 'Roboto', sans-serif;
 }
 
-.custom-tooltip{
-   position: relative !important;
-  }
 
-  .tooltip {
-    position: absolute;
-    bottom: 0%; 
-    left: 5%; 
-    background-color: black; 
-    color: white; 
-    padding: 2px 6px; 
-    font-size: 13px;
-    border-radius: 4px; 
-    white-space: nowrap; /* Prevent the tooltip from wrapping to a new line */
-    visibility: hidden; /* Hide the tooltip by default */
-  }
-
-  .custom-tooltip:hover + .tooltip {
-    visibility: visible; /* Show the tooltip on hover */
-  }
 

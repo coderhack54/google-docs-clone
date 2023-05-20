@@ -4,10 +4,10 @@ import MainContent from './components/MainContent/MainContent'
 
 const App = () => {
   return (
-   <>
+   <div className='app'>
    <Header />
   <MainContent />
-   </>
+   </div>
   )
 }
 

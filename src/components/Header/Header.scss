@@ -1,12 +1,10 @@
-$bg-hover:rgba(0,0,0,.06);
 
-// rgba(68,71,70,0.78)
+@import '../../variables.scss';
 
 .header{
 
     display: flex;
     align-items: center;
-    font-family: 'Open Sans', sans-serif;
     position: sticky;
     top: 0;
     z-index: 50;
@@ -17,15 +15,16 @@ $bg-hover:rgba(0,0,0,.06);
         width: 64px;
         box-sizing: border-box;
         display: flex;
-        justify-content: center;
+        justify-content: end;
         align-items: center;
         a{
             box-sizing: border-box;
-            height: 36px;
-            width: 36px;
+            height: 44px;
+            width: 44px;
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 4px;
             img{
                 height: 100%;
                 width: 100%;
@@ -35,13 +34,13 @@ $bg-hover:rgba(0,0,0,.06);
 
     .header__wrapper{
         width: 100%;
+        height: 100%;
             .header__topbar{
                 height: 30px;
                 width: 100%;
-                padding-top: 8px;
                 display: flex;
                 justify-content: space-between;
-                align-items: center;
+                align-items: start;
         
                 #wrapper{
                     display: flex;
@@ -65,6 +64,7 @@ $bg-hover:rgba(0,0,0,.06);
 
                     .header__topbar__icons{
                         display: flex;
+                        gap: 2px;
                         span{
                             display: flex;
                             align-items: center;
@@ -72,9 +72,13 @@ $bg-hover:rgba(0,0,0,.06);
                             height: 28px;
                             width: 28px;
                             border-radius: 50%;
-                            padding: 4px;
+                            padding: 0px 2px;
                             box-sizing: border-box;
                             cursor: pointer;
+
+                            &:hover{
+                                background-color: $bg-hover;
+                            }
                         }
                     }
                 }
@@ -82,7 +86,7 @@ $bg-hover:rgba(0,0,0,.06);
                 .header__topbar__buttons{
                     display: flex;
                     height: 60px !important;
-                    align-items: center;
+                    align-items: start;
         
                     div{
                         padding: 6px;
@@ -111,6 +115,8 @@ $bg-hover:rgba(0,0,0,.06);
                         outline:none;
                         border: 0.8px transparent;
                         cursor: pointer;
+                 
+                        width: 100%;
         
                  
                     }
@@ -144,7 +150,20 @@ $bg-hover:rgba(0,0,0,.06);
                         align-items: center;
                         background: #c2e7ff;
                         color: #001d35;
-        
+                        
+                        &.circle{
+                            height: 40px;
+                            justify-content: center;
+                            border-radius: 50%;
+                            padding: 0;
+                            width: 40px;
+
+                            > * {
+                                height: 20px;
+                                width: 20px;
+                            }
+                        }
+
                         &:hover{
                             background: #abcfe7;
                         }
@@ -174,17 +193,26 @@ $bg-hover:rgba(0,0,0,.06);
 
             .header__bottombar{
                 display: flex;
+                align-items: start;
                 width: 100%;
                 margin-top: -6px;
+        
 
                 .header__bottombar__buttons{
                     display: flex;
                     align-items: center;
+                    overflow: hidden;
 
                     .header__bottombar__buttons__button{
-                        padding: 2px 7px;
+                        padding: 4px 7px;
+                        color: $text-color-lightblack;
+                        letter-spacing: .2px;
                         cursor: pointer;
-                        font-size: 14px
+                        font-size: 14px;
+                        border-radius: 4px;
+                        &:hover{
+                            background-color: $bg-hover;
+                        }
                     }
                 }
             }

@@ -9,9 +9,16 @@
     background-color: #f9fbfd;
     display: flex;
     justify-content: center;
+    width: calc(100% - 56px);
+    transition: width 0.6s;
+
+    &[aria-expanded="false"]{
+        width: 100%;
+        margin: 0 1em;
+    }
 
     .rdw-editor-wrapper{
-     
+     width: 100%;
     }
     .rdw-editor-toolbar{
         display: flex;
@@ -20,7 +27,6 @@
         top: 64px;
         z-index: 10;
         background-color: #edf2fa;
-        width: 95vw;
         border-radius: 22px;
 
         .rdw-option-wrapper{
