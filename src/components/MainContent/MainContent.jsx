@@ -3,9 +3,11 @@ import TextEditor from '../TextEditor/TextEditor'
 import "./MainContent.scss"
 import Sidebar from '../Sidebar/Sidebar'
 
+// A component wrapper for text editor and the sidebar.
+
 const MainContent = () => {
   const [toggleOpen,setToggleOpen] = useState(false);
-  const handletoggleAriaExpanded = () =>{
+  const handletoggleAriaExpanded = () =>{                           // function to toggle the sidebar open close
       setToggleOpen(prev=>!prev)
   }
   return (

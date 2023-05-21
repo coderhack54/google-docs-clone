@@ -2,33 +2,34 @@
 
 
 
-.sharecontent{
+.sharecontent {
     font-family: 'Roboto', sans-serif;
-        min-width: 35vw;
-        .sharecontent__header{
+    min-width: 35vw;
+
+    .sharecontent__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin: 8px 0 0;
+            overflow: wrap;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-
-            h2{
-                font-size: 1.5rem;
-                font-weight: 400;
-                margin: 8px 0 0;
-                overflow: wrap;
-                display: flex;
-                align-items: center;
-           color: rgb(60,64,67);
-            }
-
-            div{
-                display: flex;
-                align-items: center;
-                gap:16px;
-            }
+            color: rgb(60, 64, 67);
         }
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+    }
 }
 
-.sharecontent__input{
+.sharecontent__input {
     border: 2px solid #0a4878;
     display: flex;
     justify-content: center;
@@ -38,7 +39,7 @@
     border-radius: 4px;
     margin-top: 16px;
 
-    input{ 
+    input {
         border: 0;
         outline: 0;
         box-shadow: none;
@@ -48,25 +49,29 @@
 }
 
 
-.sharecontent__access__sec{
+.sharecontent__access__sec {
     margin-top: 16px;
 
-        .title{
-            font-size: 1em;
-            font-weight: 500;
-            color: rgb(60,64,67);
-        }
-    .sharecontent__access{
+    .title {
+        font-size: 1em;
+        font-weight: 500;
+        color: rgb(60, 64, 67);
+    }
+
+    .sharecontent__access {
         padding: 1em 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        .wrapper{
+
+        .wrapper {
             display: flex;
             align-items: center;
-            .logo{
+
+            .logo {
                 margin-right: 12px;
-                span{
+
+                span {
                     height: 40px;
                     width: 40px;
                     border-radius: 50%;
@@ -74,36 +79,38 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-    
-                    img{
+
+                    img {
                         height: 100%;
                         width: 100%;
                         border-radius: 50%;
                     }
                 }
             }
-    
-            div{
-    
+
+            div {
+
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 height: 40px;
-    
-                p{
-                  margin: 0;
-                  font-size: 0.9em;
-                  font-weight: 400;
-                  color: rgb(95, 99, 104);
+
+                p {
+                    margin: 0;
+                    font-size: 0.9em;
+                    font-weight: 400;
+                    color: rgb(95, 99, 104);
                 }
-                strong{
-                  font-size: 1em;
-                  font-weight: 500;
-                  color: rgb(60,64,67);
+
+                strong {
+                    font-size: 1em;
+                    font-weight: 500;
+                    color: rgb(60, 64, 67);
                 }
             }
         }
-        .right{
+
+        .right {
             font-size: 14px;
             font-weight: 400;
             color: rgb(95, 99, 104);
@@ -111,12 +118,13 @@
     }
 }
 
-.sharecontent__buttons{
+.sharecontent__buttons {
     margin-top: 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .copybtn{
+
+    .copybtn {
         border-radius: 100px;
         box-sizing: border-box;
         border: 1px solid #747775;
@@ -130,18 +138,19 @@
         align-items: center;
         justify-content: space-between;
         background: white;
-        color: rgb(26,115,232);
-        span{
+        color: rgb(26, 115, 232);
+
+        span {
             padding-right: 8px;
             display: flex;
             align-items: center;
         }
     }
 
-    .donebtn{
+    .donebtn {
         border-radius: 100px;
         box-sizing: border-box;
-    
+
         font-size: 14px;
         font-weight: 500;
         height: 40px;
@@ -155,7 +164,5 @@
         color: white;
         font-weight: 500;
     }
-    
+
 }
-
-

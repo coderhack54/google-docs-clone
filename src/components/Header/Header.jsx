@@ -15,29 +15,31 @@ import Modal from "../Modal/Modal";
 import Button from "../Button/Button";
 import ShareModalContent from "../ShareModalContent/ShareModalContent";
 
+// This is the toolbar header of the google docs . It provides document name, different formatting options, and the ability to share the document.
+
 const Header = () => {
   const [title, setTitle] = useState("Docs Clone");
   const [belowThreshold, setBelowThreshold] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);                    // State for modal
-  const inputref = useRef();                                      // ref for expanding the input on typing
-  const containerRef = useRef();                                  // ref for the resize observer
+  const [isOpen, setIsOpen] = useState(false); // State for modal
+  const inputref = useRef(); // ref for expanding the input on typing
+  const containerRef = useRef(); // ref for the resize observer
   const muiIconStyle = { color: "#444746", height: "18px", width: "18px" };
 
   const handleInputChange = (e) => {
     setTitle(e.target.value);
   };
 
-  const adjustWidth =() => {
-    var width = title.length * 8 + 15;                              // 8px per character
+  const adjustWidth = () => {
+    var width = title.length * 8 + 15; // 8px per character
     inputref.current.style.width = width + "px";
-  }
+  };
 
   const handleModalOpen = () => {
     setIsOpen(true);
-  }
+  };
   const handleModalClose = () => {
     setIsOpen(false);
-  }
+  };
 
   useEffect(() => {
     adjustWidth();
@@ -45,31 +47,36 @@ const Header = () => {
 
   useEffect(() => {
     const observer = new ResizeObserver((entries) => {
+      // create a resize observer tell screen size for responsiveness
       entries.forEach((entry) => {
         const containerWidth = entry.contentRect.width;
-        const bottombar_btn= entry.target.querySelector(".header__bottombar__buttons");
+        const bottombar_btn = entry.target.querySelector(
+          ".header__bottombar__buttons"
+        );
         if (containerWidth < 842) {
           setBelowThreshold(true); // collapse the icon to show person icon
         }
         if (containerWidth > 887) {
           setBelowThreshold(false); // expand the icon
         }
-        if(containerWidth<779){
-          bottombar_btn.style.maxWidth=`${containerWidth * 0.38}px`
-        }else{
-          bottombar_btn.style.maxWidth=`none`
+        if (containerWidth < 779) {
+          bottombar_btn.style.maxWidth = `${containerWidth * 0.38}px`;
+        } else {
+          bottombar_btn.style.maxWidth = `none`;
         }
-        if(containerWidth<555){
-          bottombar_btn.style.display=`none`;
-          inputref.current.style.maxWidth=`${containerWidth * 0.11}px`
-        }else {
-          bottombar_btn.style.display=`flex`
-          inputref.current.style.maxWidth=`none`
+        if (containerWidth < 555) {
+          // file menu toolbar display none and doc title size adjust on screen below 555px
+          bottombar_btn.style.display = `none`;
+          inputref.current.style.maxWidth = `${containerWidth * 0.11}px`;
+        } else {
+          bottombar_btn.style.display = `flex`;
+          inputref.current.style.maxWidth = `none`;
         }
-        if(containerWidth<420){
-          inputref.current.style.display=`none`
-        }else {
-          inputref.current.style.display=`block`
+        if (containerWidth < 420) {
+          //doc title display none for screen below 420px
+          inputref.current.style.display = `none`;
+        } else {
+          inputref.current.style.display = `block`;
         }
       });
     });
