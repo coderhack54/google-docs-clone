@@ -11,20 +11,32 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import VideoChatIcon from "../../assets/icons/VideoChatIcon.jsx";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
+import Modal from "../Modal/Modal";
+import Button from "../Button/Button";
+import ShareModalContent from "../ShareModalContent/ShareModalContent";
 
 const Header = () => {
   const [title, setTitle] = useState("Docs Clone");
   const [belowThreshold, setBelowThreshold] = useState(false);
-  const inputref = useRef(); // ref for expanding the input on typing
-  const containerRef = useRef(); // ref for the resize observer
+  const [isOpen, setIsOpen] = useState(false);                    // State for modal
+  const inputref = useRef();                                      // ref for expanding the input on typing
+  const containerRef = useRef();                                  // ref for the resize observer
   const muiIconStyle = { color: "#444746", height: "18px", width: "18px" };
 
   const handleInputChange = (e) => {
     setTitle(e.target.value);
   };
-  function adjustWidth() {
-    var width = title.length * 8 + 15; // 8px per character
+
+  const adjustWidth =() => {
+    var width = title.length * 8 + 15;                              // 8px per character
     inputref.current.style.width = width + "px";
+  }
+
+  const handleModalOpen = () => {
+    setIsOpen(true);
+  }
+  const handleModalClose = () => {
+    setIsOpen(false);
   }
 
   useEffect(() => {
@@ -43,14 +55,21 @@ const Header = () => {
           setBelowThreshold(false); // expand the icon
         }
         if(containerWidth<779){
-          bottombar_btn.style.maxWidth=`${containerWidth * 0.5}px`
+          bottombar_btn.style.maxWidth=`${containerWidth * 0.38}px`
         }else{
           bottombar_btn.style.maxWidth=`none`
         }
         if(containerWidth<555){
           bottombar_btn.style.display=`none`;
+          inputref.current.style.maxWidth=`${containerWidth * 0.11}px`
         }else {
           bottombar_btn.style.display=`flex`
+          inputref.current.style.maxWidth=`none`
+        }
+        if(containerWidth<420){
+          inputref.current.style.display=`none`
+        }else {
+          inputref.current.style.display=`block`
         }
       });
     });
@@ -105,30 +124,32 @@ const Header = () => {
               </span>
             </div>
             <div>
-              <button
+              <Button
                 className="header__topbar__buttons__button videobtn"
                 title="Join a call here or present this tab to a call"
               >
                 <VideoChatIcon />
                 <ArrowDropDownIcon sx={{ width: "40%", color: "#444746" }} />
-              </button>
+              </Button>
             </div>
             <div>
               {belowThreshold ? (
-                <button
+                <Button
                   className="header__topbar__buttons__button sharebtn circle"
                   title="Private to only me"
+                  onClick={handleModalOpen}
                 >
                   <PersonAddAltIcon />
-                </button>
+                </Button>
               ) : (
-                <button
+                <Button
                   className="header__topbar__buttons__button sharebtn"
                   title="Private to only me"
+                  onClick={handleModalOpen}
                 >
                   <LockOutlinedIcon sx={{ width: "30%" }} />
                   <span>Share</span>
-                </button>
+                </Button>
               )}
             </div>
             <div>
@@ -155,6 +176,9 @@ const Header = () => {
           </div>
         </div>
       </div>
+      <Modal open={isOpen} onClose={handleModalClose}>
+        <ShareModalContent />
+      </Modal>
     </header>
   );
 };
